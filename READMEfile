@@ -1,0 +1,145 @@
+# Movie Recommendation System 🎬
+
+## Overview
+The **Movie Recommendation System** is a web application that provides movie recommendations based on user preferences. It consists of a **Flask-based backend** and a **React.js frontend**, working together to serve and display movie recommendations dynamically.
+
+## Features
+- ✅ Interactive UI built with React.js 🎨
+- ✅ Backend API using Flask to fetch movie recommendations 🖥️
+- ✅ Users can enter a **user ID** to get personalized recommendations 📌
+- ✅ Supports **real-time data fetching** and **error handling** 🔄
+
+## Tech Stack
+### Backend (Flask API)
+- **Python** 🐍
+- **Flask** (for creating REST API) 🌍
+- **Pandas** (for data processing) 📊
+- **NumPy** (for numerical operations) 🔢
+
+### Frontend (React.js)
+- **React.js** ⚛️ (for dynamic UI)
+- **CSS** 🎨 (for styling)
+- **Axios** (for API requests) 🔄
+
+---
+
+## Installation & Setup 🚀
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/YourUsername/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
+```
+
+### 2️⃣ Backend Setup (Flask API)
+```sh
+cd backend  # Navigate to the backend directory
+python -m venv venv  # Create a virtual environment
+source venv/bin/activate  # Activate the virtual environment (For macOS/Linux)
+venv\Scripts\activate  # Activate the virtual environment (For Windows)
+```
+
+### 3️⃣ Install Dependencies
+```sh
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the Flask Server
+```sh
+python app.py
+```
+By default, the server will run at `http://127.0.0.1:5000`
+
+### 5️⃣ Frontend Setup (React.js)
+```sh
+cd ../frontend  # Navigate to frontend directory
+npm install  # Install dependencies
+```
+
+### 6️⃣ Run the React Application
+```sh
+npm start
+```
+This will launch the app at `http://localhost:3000`
+
+---
+
+## Code Explanation 📜
+The **Movie Recommendation System** consists of a **Flask backend** and a **React.js frontend** that interact via REST API requests. The Flask backend loads movie data and provides recommendations based on user input. When a user enters a user ID, the frontend sends a request to the backend API (`/recommend/<user_id>`). The backend processes the request, retrieves relevant movie recommendations using a predefined dataset or machine learning model, and returns them as JSON. The frontend then dynamically displays the recommended movies in a structured format.
+
+---
+
+## API Endpoints 📡
+### 1️⃣ Fetch Homepage
+- **URL:** `GET /`
+- **Response:** `Welcome to the Movie Recommendation System!`
+
+### 2️⃣ Get Movie Recommendations
+- **URL:** `GET /recommend/<user_id>`
+- **Example Request:** `GET http://127.0.0.1:5000/recommend/1`
+- **Response:**
+```json
+{
+  "movies": [
+    "The Dark Knight",
+    "Inception",
+    "Interstellar"
+  ]
+}
+```
+
+---
+
+## Deployment 🚀
+
+### 1️⃣ Backend Deployment
+You can deploy the backend using **Render, Heroku, or AWS EC2**.
+Example for Heroku:
+```sh
+git init
+git add .
+git commit -m "Deploying Backend"
+heroku create your-app-name
+heroku buildpacks:add heroku/python
+git push heroku main
+```
+
+### 2️⃣ Frontend Deployment
+Deploy the React frontend using **Vercel or Netlify**.
+Example for Vercel:
+```sh
+npm install -g vercel
+vercel
+```
+
+---
+
+## Troubleshooting & Common Issues ⚠️
+
+### 1️⃣ CORS Error ❌
+- If the frontend **fails to fetch** from the backend due to **CORS issues**, install `flask-cors` in the backend:
+```sh
+pip install flask-cors
+```
+- Add the following to `app.py`:
+```python
+from flask_cors import CORS
+CORS(app)
+```
+
+### 2️⃣ Port Already in Use 🔥
+- If **port 5000 is already in use**, run:
+```sh
+lsof -i :5000  # Find process using port 5000
+kill -9 <PID>  # Replace <PID> with the process ID
+```
+
+---
+
+## Contribution 🤝
+Feel free to contribute! Fork the repo, create a new branch, make improvements, and submit a PR! 🎉
+
+## Author
+**Kaushik Basavaraju**
+
+**GitHub:** [KaushikBasavaraju16](https://github.com/KaushikBasavaraju16)
